@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  flask-app:
+  backend-app:
     image: zoliao2024/bitcoin-be:v0.0.1
     container_name: bitcoin-be-container
     environment:
@@ -15,8 +15,8 @@ services:
     networks:
       - bitExp-network
 
-  backend-app:
-    image: zoliao2024/bitcoin-ingestion:v0.0.3
+  ingestion-app:
+    image: zoliao2024/bitcoin-ingestion:v0.0.4
     container_name: bitcoin-ingestion-container
     command: [ "--rpc-user", "${RPC_USER}", "--rpc-pwd", "${RPC_PASSWORD}", "--rpc-url", "${RPC_URL}", "--db-user", "${MYSQL_USER}", "--db-pwd", "${MYSQL_PASSWORD}", "--db-host", "${MYSQL_HOST}", "--redis-host", "${REDIS_HOST}", "--redis-port", "${REDIS_PORT}", "--redis-pwd", "${REDIS_PASSWORD}" ]
     networks:
