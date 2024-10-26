@@ -2,7 +2,7 @@ version: '3'
 
 services:
   backend-app:
-    image: zoliao2024/bitcoin-be:v0.0.3
+    image: zch2001/bitcoin-be:v0.0.1
     container_name: bitcoin-be-container
     environment:
       MYSQL_HOST: ${MYSQL_HOST}
